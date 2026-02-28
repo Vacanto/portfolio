@@ -2,6 +2,9 @@ import { motion } from "framer-motion"
 import StarBackground from "./StarBackground"
 import MoonBackground from "./MoonBackground"
 import smartbillImage from "./assets/smartbill.png"
+import javatutorImage from "./assets/javatutor.png";
+import AntoImage from "./assets/Anto.png";
+
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
               <a href="#about" className="hover:text-blue-400 transition">About</a>
               <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
               <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
+              <a href="#skills" className="hover:text-blue-400 transition">Skills</a>
             </div>
           </div>
         </nav>
@@ -30,7 +34,7 @@ function App() {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            src="https://via.placeholder.com/160"
+            src={AntoImage}
             alt="Profile"
             className="w-40 h-40 rounded-full border-4 border-blue-500 shadow-xl mb-8"
           />
@@ -83,13 +87,50 @@ function App() {
             className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-10 shadow-xl"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a Computer Science student passionate about Artificial
-              Intelligence, Machine Learning, and Full Stack Development.
-              I enjoy building real-world solutions that combine clean UI
-              with powerful backend intelligence.
+              I am a Computer Science student and aspiring software engineer with a strong foundation in Full Stack Development and Artificial Intelligence. I specialize in building scalable applications using technologies like React, Java, Python, and Machine Learning. My projects demonstrate practical problem-solving skills, including AI-driven analytics, desktop applications, and interactive web systems. I am passionate about learning modern technologies and applying them to real-world challenges. I actively develop and showcase my work on GitHub to demonstrate technical proficiency and engineering mindset. I aim to contribute to innovative teams and grow as a professional software developer.
             </p>
           </motion.div>
         </section>
+
+        {/* ================= SKILLS ================= */}
+      <section id="skills" className="py-28 px-6 max-w-6xl mx-auto">
+        <motion.h3
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center mb-12"
+       >
+        Skills
+      </motion.h3>
+
+      <div className="grid md:grid-cols-3 gap-6">
+
+      {[
+        "Java",
+        "Python",
+        "React & Vite",
+        "JavaScript",
+        //"TypeScript",
+        //"Tailwind CSS",
+        "MySQL",
+        //"MongoDB",
+        "Machine Learning",
+        //"FastAPI",
+        "Html",
+        "Streamlit",
+        "Git & GitHub"
+        ].map((skill) => (
+         <motion.div
+          key={skill}
+          whileHover={{ scale: 1.05 }}
+          className="bg-white/5 border border-white/10 backdrop-blur-lg rounded-xl p-6 text-center   shadow-xl"
+         >
+          <p className="text-lg font-semibold text-blue-400">{skill}</p>
+          </motion.div>
+       ))}
+
+      </div>
+    </section>
 
         {/* ================= PROJECTS ================= */}
         <section id="projects" className="py-28 px-6 max-w-6xl mx-auto">
@@ -187,6 +228,47 @@ function App() {
                 </div>
               </div>
             </motion.div>
+
+             {/* Add Java Tutor Bot card here */}
+
+             <motion.div
+             whileHover={{ y: -10 }}
+             className="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl overflow-hidden shadow-xl"
+             >
+            <img
+                src={javatutorImage}
+                alt="Java Tutor Bot Login"
+                className="w-full h-60 object-cover"
+               />
+
+            <div className="p-6">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+            Java Tutor Bot – Desktop Quiz Application
+            </h4>
+
+            <p className="text-gray-400 text-sm mb-4">
+            Java Swing-based desktop application with secure login, user
+            registration, and quiz functionality powered by MySQL database
+            and SHA-256 password hashing.
+            </p>
+  
+           <p className="text-gray-300 text-sm mb-4">
+           <span className="font-semibold text-white">Tech Stack:</span>{" "}
+           Java / Swing / MySQL / JDBC / SHA-256
+           </p>
+
+           <div className="flex gap-4">
+           <a
+             href="https://github.com/Vacanto/JavaTutorBot"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="px-4 py-2 bg-gray-800 border border-white/20 rounded-full text-sm hover:bg-gray-700 transition"
+         >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </motion.div>
 
           </div>
         </section>
